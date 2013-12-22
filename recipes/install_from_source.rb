@@ -56,19 +56,14 @@ execute 'zeromq make install' do
   creates "#{node['zeromq']['dir']}/lib/libzmq_la-zmq.o"
 end
 
-if node['zeromq']['dir'] != '/usr/local'
-  template '/etc/ld.so.conf.d/zeromq.conf' do
-    group 'root'
-    mode '0444'
-    owner 'root'
-  end
+template '/etc/ld.so.conf.d/zeromq.conf' do
+  group 'root'
+  mode '0444'
+  owner 'root'
 end
 
 execute 'ldconfig' do
   action :nothing
   command 'ldconfig'
-  subscribes :run, resources(:execute => 'zeromq make install'), :immediately
-  if node['zeromq']['dir'] != '/usr/local'
-    subscribes :run, resources(:template => '/etc/ld.so.conf.d/zeromq.conf'), :immediately
-  end
+  subscribes :run, resources(:template => '/etc/ld.so.conf.d/zeromq.conf'), :immediately
 end
