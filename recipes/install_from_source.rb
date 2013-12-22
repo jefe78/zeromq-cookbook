@@ -68,4 +68,5 @@ execute 'ldconfig' do
   action :nothing
   command 'ldconfig'
   subscribes :run, resources(:execute => 'zeromq make install'), :immediately
+  subscribes :run, resources(:template => '/etc/ld.so.conf.d/zeromq.conf'), :immediately
 end
