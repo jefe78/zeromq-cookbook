@@ -1,3 +1,4 @@
+# <a name="title"></a> zeromq-cookbook [![Build Status](https://api.travis-ci.org/plu/zeromq-cookbook.png)](https://travis-ci.org/plu/zeromq-cookbook)
 # DESCRIPTION
 
 Installs zeromq.
