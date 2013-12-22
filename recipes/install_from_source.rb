@@ -65,5 +65,5 @@ end
 execute 'ldconfig' do
   action :nothing
   command 'ldconfig'
-  subscribes :run, resources(:template => '/etc/ld.so.conf.d/zeromq.conf'), :immediately
+  subscribes :run, 'template[/etc/ld.so.conf.d/zeromq.conf]', :immediately
 end
