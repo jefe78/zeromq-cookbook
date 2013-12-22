@@ -17,7 +17,6 @@
 # limitations under the License.
 #
 
-default['zeromq']['check_sha'] = true
 default['zeromq']['dir'] = '/usr/local'
 default['zeromq']['install_method'] = 'source'
 default['zeromq']['sha1_sum'] = '08303259f08edd1faeac2e256f5be3899377135e'
