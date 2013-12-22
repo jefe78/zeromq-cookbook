@@ -42,4 +42,10 @@ suites:
 - name: default
   run_list:
   - recipe[zeromq]
+- name: custom_dir
+  run_list:
+  - recipe[zeromq]
+  attributes:
+    zeromq:
+      dir: /opt/zeromq
 
