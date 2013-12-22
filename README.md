@@ -23,23 +23,19 @@ Installs zeromq.
 
 # ATTRIBUTES
 
-```ruby
-zeromq['dir'] = '/usr/local'
-zeromq['install_method'] = 'source'
-zeromq['sha1_sum'] = '08303259f08edd1faeac2e256f5be3899377135e'
-zeromq['src_url'] = 'http://download.zeromq.org'
-zeromq['version'] = '3.2.4'
-```
+* zeromq['dir'] = '/usr/local'
+* zeromq['install_method'] = 'source'
+* zeromq['sha1_sum'] = '08303259f08edd1faeac2e256f5be3899377135e'
+* zeromq['src_url'] = 'http://download.zeromq.org'
+* zeromq['version'] = '3.2.4'
 
 # USAGE
 
 Include the zeromq recipe to install zeromq on your system based on the default installation method:
 
-```ruby
 include_recipe 'zeromq'
-```
 
-Currently the only installation method that is supported is: `source`
+Currently the only installation method that is supported is: source
 
 # LICENSE/AUTHOR
 
