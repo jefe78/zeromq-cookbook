@@ -42,7 +42,7 @@ execute "tar --no-same-owner -zxf #{zeromq_tar}" do
   creates "/usr/local/src/zeromq-#{node['zeromq']['version']}"
 end
 
-execute 'compile zeromq' do
+execute 'zeromq configure/make' do
   environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
   command "./configure --prefix=#{node['zeromq']['dir']} && make"
   cwd "/usr/local/src/zeromq-#{node['zeromq']['version']}"
