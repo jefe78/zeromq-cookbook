@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "zeromq": {
+      "path": "."
+    },
+    "apt": {
+      "locked_version": "2.3.0"
+    },
+    "yum": {
+      "locked_version": "2.4.2"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    }
+  }
+}
