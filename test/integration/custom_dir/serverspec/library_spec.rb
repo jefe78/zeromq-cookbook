@@ -9,6 +9,6 @@ describe 'zeromq library' do
   end
 end
 
-describe file('/etc/ld.conf.so.d/zeromq.conf') do
+describe file('/etc/ld.so.conf.d/zeromq.conf') do
   its(:content) { should match %r|/opt/zeromq/lib| }
 end
