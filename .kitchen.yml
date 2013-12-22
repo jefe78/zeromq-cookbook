@@ -3,7 +3,7 @@ driver_plugin: vagrant
 driver_config:
   require_chef_omnibus: true
   customize:
-    memory: 512
+    memory: 256
     cpus: 2
 platforms:
 - name: debian-6.0.8
