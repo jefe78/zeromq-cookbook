@@ -10,4 +10,4 @@
 
 # Author
 
-Author:: YOUR_NAME (<johannes.plunien@metaquark.de>)
+Author:: Johannes Plunien (<plu@pqpq.de>)
