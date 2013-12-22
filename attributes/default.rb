@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: zeromq
-# Recipe:: default
+# Attributes:: default
 #
 # Copyright (C) 2013 Johannes Plunien
 #
@@ -17,4 +17,9 @@
 # limitations under the License.
 #
 
-include_recipe "zeromq::install_from_#{node['zeromq']['install_method']}"
+default['zeromq']['check_sha'] = true
+default['zeromq']['dir'] = '/usr/local'
+default['zeromq']['install_method'] = 'source'
+default['zeromq']['sha1_sum'] = '08303259f08edd1faeac2e256f5be3899377135e'
+default['zeromq']['src_url'] = 'http://download.zeromq.org'
+default['zeromq']['version'] = '3.2.4'

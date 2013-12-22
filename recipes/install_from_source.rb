@@ -16,3 +16,42 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+include_recipe 'build-essential'
+
+case node['platform_family']
+when 'rhel', 'fedora'
+  package 'openssl-devel'
+when 'debian', 'ubuntu'
+  package 'libssl-dev'
+end
+
+zeromq_tar = "zeromq-#{node['zeromq']['version']}.tar.gz"
+zeromq_tar_path = zeromq_tar
+zeromq_src_url = "#{node['zeromq']['src_url']}/#{zeromq_tar_path}"
+
+remote_file "/usr/local/src/#{zeromq_tar}" do
+  source zeromq_src_url
+  checksum node['zeromq']['sha1_sum']
+  mode 0644
+  action :create_if_missing
+end
+
+execute "tar --no-same-owner -zxf #{zeromq_tar}" do
+  cwd "/usr/local/src"
+  creates "/usr/local/src/zeromq-#{node['zeromq']['version']}"
+end
+
+execute 'compile zeromq' do
+  environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
+  command "./configure --prefix=#{node['zeromq']['dir']} && make"
+  cwd "/usr/local/src/zeromq-#{node['zeromq']['version']}"
+  creates "/usr/local/src/zeromq-#{node['zeromq']['version']}/src/libzmq_la-zmq.o"
+end
+
+execute 'zeromq make install' do
+  environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
+  command 'make install'
+  cwd "/usr/local/src/zeromq-#{node['zeromq']['version']}"
+  creates "#{node['zeromq']['dir']}/lib/libzmq_la-zmq.o"
+end
