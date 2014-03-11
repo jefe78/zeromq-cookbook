@@ -24,6 +24,9 @@ when 'rhel', 'fedora'
   package 'openssl-devel'
 when 'debian', 'ubuntu'
   package 'libssl-dev'
+  if node['zeromq']['version'] =~ /^2\..*/
+    package 'uuid-dev'
+  end
 end
 
 zeromq_tar = "zeromq-#{node['zeromq']['version']}.tar.gz"
