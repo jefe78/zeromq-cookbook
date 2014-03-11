@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: zeromq
-# Attributes:: default
+# Recipe:: install_from_package
 #
 # Copyright (C) 2013 Johannes Plunien
 #
@@ -17,13 +17,4 @@
 # limitations under the License.
 #
 
-case node['platform']
-when 'ubuntu'
-  default['zeromq']['install_method'] = 'package'
-else
-  default['zeromq']['install_method'] = 'source'
-
-default['zeromq']['dir'] = '/usr/local'
-default['zeromq']['sha1_sum'] = '08303259f08edd1faeac2e256f5be3899377135e'
-default['zeromq']['src_url'] = 'http://download.zeromq.org'
-default['zeromq']['version'] = '3.2.4'
+package 'libzmq-dev'
