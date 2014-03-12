@@ -12,7 +12,6 @@ Installs zeromq.
   * Debian 7.2.0
   * Ubuntu 10.04
   * Ubuntu 12.04
-  * CentOS 5.10
   * CentOS 6.5
 
 ## Cookbooks
