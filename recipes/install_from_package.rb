@@ -17,9 +17,15 @@
 # limitations under the License.
 #
 
-case node['platform_family']
-  when 'debian'
-    package 'libzmq-dev'
-  else
-    Chef::Application.fatal!("There are no zeromq packages for this platform; please use the source method to install")
+case node['platform']
+when 'ubuntu'
+  libzmq_package = 'libzmq-dev' if Chef::VersionConstraint.new(">= 12.0").include?(node['platform_version'])
+when 'debian'
+  libzmq_package = 'libzmq-dev' if Chef::VersionConstraint.new(">= 7.0").include?(node['platform_version'])
+end
+
+unless libzmq_package.nil?
+  package libzmq_package
+else
+  Chef::Application.fatal!("There are no zeromq packages for this platform; please use the source method to install")
 end
