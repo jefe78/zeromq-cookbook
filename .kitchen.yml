@@ -35,18 +35,25 @@ platforms:
     box: opscode-centos-6.5
     box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5_chef-provisionerless.box
 suites:
-- name: default
+- name: source
   run_list:
   - recipe[zeromq]
-- name: custom_dir
+- name: source_custom_dir
   run_list:
   - recipe[zeromq]
   attributes:
     zeromq:
       dir: /opt/zeromq
-- name: v2
+- name: source_v2
   run_list:
     - recipe[zeromq]
   attributes:
     zeromq:
       version: 2.2.0
+- name: package
+  run_list:
+    - recipe[zeromq]
+  attributes:
+    zeromq:
+      install_method: package
+  excludes: ["centos-6.5", "debian-6.0.8", "ubuntu-10.04"]
