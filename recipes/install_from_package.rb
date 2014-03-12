@@ -17,4 +17,9 @@
 # limitations under the License.
 #
 
-package 'libzmq-dev'
+case node['platform_family']
+  when 'debian'
+    package 'libzmq-dev'
+  else
+    Chef::Application.fatal!("There are no zeromq packages for this platform; please use the source method to install")
+end
