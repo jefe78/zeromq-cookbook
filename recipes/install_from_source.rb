@@ -22,6 +22,9 @@ include_recipe 'build-essential'
 case node['platform_family']
 when 'rhel', 'fedora'
   package 'openssl-devel'
+  if node['zeromq']['version'] =~ /^2\..*/
+    package 'libuuid-devel'
+  end
 when 'debian', 'ubuntu'
   package 'libssl-dev'
   if node['zeromq']['version'] =~ /^2\..*/
