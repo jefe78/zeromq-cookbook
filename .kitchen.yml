@@ -50,6 +50,12 @@ suites:
   attributes:
     zeromq:
       version: 2.2.0
+- name: source_v4
+  run_list:
+    - recipe[zeromq]
+  attributes:
+    zeromq:
+      version: 4.0.4
 - name: package
   run_list:
     - recipe[zeromq]
