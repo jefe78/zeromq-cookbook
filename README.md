@@ -28,6 +28,9 @@ Installs zeromq.
 * zeromq['src_url'] = 'http://download.zeromq.org'
 * zeromq['version'] = '3.2.4'
 
+Note: If you want to install a different version than 3.2.4, just
+set the node attribute to the version you want.
+
 # USAGE
 
 Include the zeromq recipe to install zeromq on your system based on the default installation method:
