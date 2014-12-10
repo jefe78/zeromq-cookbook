@@ -38,7 +38,7 @@ zeromq_src_url = "#{node['zeromq']['src_url']}/#{zeromq_tar_path}"
 
 remote_file "/usr/local/src/#{zeromq_tar}" do
   source zeromq_src_url
-  checksum node['zeromq']['sha1_sum']
+  checksum node['zeromq']['sha256_sum']
   mode 0644
   action :create_if_missing
 end

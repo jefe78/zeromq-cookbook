@@ -19,6 +19,6 @@
 
 default['zeromq']['dir'] = '/usr/local'
 default['zeromq']['install_method'] = 'source'
-default['zeromq']['sha1_sum'] = '08303259f08edd1faeac2e256f5be3899377135e'
+default['zeromq']['sha256_sum'] = 'df96a141c85b65c2cb6c0db22223126623a09eecbfccb7f74400f3f938742f59'
 default['zeromq']['src_url'] = 'http://download.zeromq.org'
 default['zeromq']['version'] = '3.2.4'
