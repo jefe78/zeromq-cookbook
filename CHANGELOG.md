@@ -1,4 +1,4 @@
-## v1.0.2
+## v1.0.3
 
 * Add support for SHA256 checksum while pulling package using remote_file
 
