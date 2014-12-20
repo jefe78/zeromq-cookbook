@@ -52,14 +52,14 @@ execute 'zeromq configure/make' do
   environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
   command "./configure --prefix=#{node['zeromq']['dir']} && make"
   cwd "/usr/local/src/zeromq-#{node['zeromq']['version']}"
-  creates "/usr/local/src/zeromq-#{node['zeromq']['version']}/src/libzmq_la-zmq.o"
+  creates "/usr/local/src/zeromq-#{node['zeromq']['version']}/src/#{node['zeromq']['creates']}"
 end
 
 execute 'zeromq make install' do
   environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
   command 'make install'
   cwd "/usr/local/src/zeromq-#{node['zeromq']['version']}"
-  creates "#{node['zeromq']['dir']}/lib/libzmq_la-zmq.o"
+  creates File.join(node['zeromq']['dir'], 'lib', node['zeromq']['creates'])
 end
 
 template '/etc/ld.so.conf.d/zeromq.conf' do
