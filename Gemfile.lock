@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.6)
-    berkshelf (3.2.1)
+    berkshelf (3.2.2)
       addressable (~> 2.3.4)
       berkshelf-api-client (~> 1.2)
       buff-config (~> 1.0)
@@ -120,7 +120,7 @@ GEM
     solve (1.2.1)
       dep_selector (~> 1.0)
       semverse (~> 1.1)
-    specinfra (2.10.2)
+    specinfra (2.10.3)
       net-scp
       net-ssh
     test-kitchen (1.2.1)
