@@ -1,3 +1,9 @@
+## v1.0.4
+
+* Fix and improve tests
+* Fix condition to make cookbook idempotent
+* Install v3.2.5 by default
+
 ## v1.0.3
 
 * Add support for SHA256 checksum while pulling package using remote_file
