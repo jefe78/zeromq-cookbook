@@ -6,7 +6,7 @@ describe command('ldconfig -p | grep -q /opt/zeromq/lib/libzmq') do
   its(:exit_status) { should eq 0 }
 end
 
-describe file('/opt/lib/libzmq.so') do
+describe file('/opt/zeromq/lib/libzmq.so') do
   it { should be_file }
 end
 
