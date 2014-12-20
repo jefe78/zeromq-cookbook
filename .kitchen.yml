@@ -55,7 +55,7 @@ suites:
     - recipe[zeromq]
   attributes:
     zeromq:
-      version: 4.0.4
+      version: 4.0.5
 - name: package
   run_list:
     - recipe[zeromq]
