@@ -48,16 +48,9 @@ execute "tar --no-same-owner -zxf #{zeromq_tar}" do
   creates "/usr/local/src/zeromq-#{node['zeromq']['version']}"
 end
 
-execute 'zeromq configure/make' do
+execute 'zeromq compile and install' do
   environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
-  command "./configure --prefix=#{node['zeromq']['dir']} && make"
-  cwd "/usr/local/src/zeromq-#{node['zeromq']['version']}"
-  creates "/usr/local/src/zeromq-#{node['zeromq']['version']}/src/#{node['zeromq']['creates']}"
-end
-
-execute 'zeromq make install' do
-  environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
-  command 'make install'
+  command "./configure --prefix=#{node['zeromq']['dir']} && make && make install"
   cwd "/usr/local/src/zeromq-#{node['zeromq']['version']}"
   creates File.join(node['zeromq']['dir'], 'lib', node['zeromq']['creates'])
 end
