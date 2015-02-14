@@ -1,3 +1,7 @@
+## v1.0.6
+
+* Fix using release candidates in zeromq source install method
+
 ## v1.0.5
 
 * Make configure/make step idempotent by merging compile and install steps
