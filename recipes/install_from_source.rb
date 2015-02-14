@@ -33,25 +33,30 @@ when 'debian', 'ubuntu'
 end
 
 zeromq_tar = "zeromq-#{node['zeromq']['version']}.tar.gz"
-zeromq_tar_path = zeromq_tar
-zeromq_src_url = "#{node['zeromq']['src_url']}/#{zeromq_tar_path}"
+zeromq_tar_path = "/usr/local/src/#{zeromq_tar}"
+zeromq_src_url = "#{node['zeromq']['src_url']}/#{zeromq_tar}"
+zeromq_src_dir = "/usr/local/src/zeromq-#{node['zeromq']['version']}"
 
-remote_file "/usr/local/src/#{zeromq_tar}" do
+remote_file zeromq_tar_path do
   source zeromq_src_url
   checksum node['zeromq']['sha256_sum']
   mode 0644
   action :create_if_missing
 end
 
-execute "tar --no-same-owner -zxf #{zeromq_tar}" do
+directory zeromq_src_dir do
+  action :create
+end
+
+execute "tar --no-same-owner -zxf #{zeromq_tar} -C #{zeromq_src_dir} --strip-components 1" do
   cwd "/usr/local/src"
-  creates "/usr/local/src/zeromq-#{node['zeromq']['version']}"
+  creates File.join(zeromq_src_dir, 'configure')
 end
 
 execute 'zeromq compile and install' do
   environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
   command "./configure --prefix=#{node['zeromq']['dir']} && make && make install"
-  cwd "/usr/local/src/zeromq-#{node['zeromq']['version']}"
+  cwd zeromq_src_dir
   creates File.join(node['zeromq']['dir'], 'lib', node['zeromq']['creates'])
 end
 

@@ -56,6 +56,13 @@ suites:
     zeromq:
       version: 4.0.5
       sha256_sum: 3bc93c5f67370341428364ce007d448f4bb58a0eaabd0a60697d8086bc43342b
+- name: source_v41rc1
+  run_list:
+    - recipe[zeromq]
+  attributes:
+    zeromq:
+      version: 4.1.0-rc1
+      sha256_sum: e8e6325abe2ede0a9fb3d1abbe425d8a7911f6ac283652ee49b36afbb0164d60
 - name: source_custom_dir
   run_list:
   - recipe[zeromq]
