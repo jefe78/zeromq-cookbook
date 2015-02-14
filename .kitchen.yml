@@ -69,6 +69,7 @@ suites:
   attributes:
     zeromq:
       dir: /opt/zeromq
+  includes: ["ubuntu-12.04"]
 - name: package
   run_list:
     - recipe[zeromq]
