@@ -19,7 +19,6 @@
 
 default['zeromq']['dir'] = '/usr/local'
 default['zeromq']['install_method'] = 'source'
-default['zeromq']['sha256_sum'] = '09653e56a466683edb2f87ee025c4de55b8740df69481b9d7da98748f0c92124'
-default['zeromq']['src_url'] = 'http://download.zeromq.org'
-default['zeromq']['version'] = '3.2.5'
+default['zeromq']['src_url'] = 'https://github.com/zeromq/zeromq4-1.git'
+default['zeromq']['version'] = 'v4.1.4'
 default['zeromq']['creates'] = 'libzmq.so'

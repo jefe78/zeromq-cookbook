@@ -32,30 +32,17 @@ when 'debian', 'ubuntu'
   end
 end
 
-zeromq_tar = "zeromq-#{node['zeromq']['version']}.tar.gz"
-zeromq_tar_path = "/usr/local/src/#{zeromq_tar}"
-zeromq_src_url = "#{node['zeromq']['src_url']}/#{zeromq_tar}"
 zeromq_src_dir = "/usr/local/src/zeromq-#{node['zeromq']['version']}"
 
-remote_file zeromq_tar_path do
-  source zeromq_src_url
-  checksum node['zeromq']['sha256_sum']
-  mode 0644
-  action :create_if_missing
-end
-
-directory zeromq_src_dir do
-  action :create
-end
-
-execute "tar --no-same-owner -zxf #{zeromq_tar} -C #{zeromq_src_dir} --strip-components 1" do
-  cwd "/usr/local/src"
-  creates File.join(zeromq_src_dir, 'configure')
+git zeromq_src_dir do
+  repository node['zeromq']['src_url']
+  revision node['zeromq']['version']
+  action :sync
 end
 
 execute 'zeromq compile and install' do
   environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
-  command "./configure --prefix=#{node['zeromq']['dir']} && make && make install"
+  command "./autogen.sh && ./configure --prefix=#{node['zeromq']['dir']} && make && make install"
   cwd zeromq_src_dir
   creates File.join(node['zeromq']['dir'], 'lib', node['zeromq']['creates'])
 end
@@ -69,5 +56,5 @@ end
 execute 'ldconfig' do
   action :nothing
   command 'ldconfig'
-  subscribes :run, 'template[/etc/ld.so.conf.d/zeromq.conf]', :immediately
+  subscribes :create, 'template[/etc/ld.so.conf.d/zeromq.conf]', :immediately
 end
