@@ -8,7 +8,6 @@ Installs zeromq.
 ## Platform
 
 * Tested on
-  * Debian 6.0.8
   * Debian 7.2.0
   * Ubuntu 10.04
   * Ubuntu 12.04

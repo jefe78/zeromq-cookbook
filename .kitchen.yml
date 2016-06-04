@@ -6,12 +6,6 @@ driver_config:
     memory: 256
     cpus: 2
 platforms:
-- name: debian-6.0.8
-  driver_config:
-    box: opscode-debian-6.0.8
-    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_debian-6.0.8_chef-provisionerless.box
-  run_list:
-  - recipe[apt]
 - name: debian-7.2.0
   driver_config:
     box: opscode-debian-7.2.0
