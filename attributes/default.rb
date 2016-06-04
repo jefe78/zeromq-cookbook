@@ -25,3 +25,4 @@ default['zeromq']['creates'] = 'libzmq.so'
 default['zeromq']['libsodium_version'] = '1.0.10'
 default['zeromq']['libsodium_src_url'] = 'https://download.libsodium.org/libsodium/releases/libsodium-1.0.10.tar.gz'
 default['zeromq']['libsodium_sha256_sum'] = '71b786a96dd03693672b0ca3eb77f4fb08430df307051c0d45df5353d22bc4be'
+default['zeromq']['install_libsodium'] = true
