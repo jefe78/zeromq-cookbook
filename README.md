@@ -22,11 +22,7 @@ Installs zeromq.
 
 # ATTRIBUTES
 
-* zeromq['dir'] = '/usr/local'
-* zeromq['install_method'] = 'source'
-* zeromq['src_url'] = 'https://github.com/zeromq/zeromq4-1.git'
-* zeromq['version'] = 'v4.1.4'
-* zeromq['creates'] = 'lib/libzmq.so'
+See (attributes/default.rb)[attributes/default.rb] for defaults.
 
 Note: If you want to install a different version than v4.1.4, just
 change the `src_url` and `version` attributes.
