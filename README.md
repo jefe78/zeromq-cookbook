@@ -24,13 +24,12 @@ Installs zeromq.
 
 * zeromq['dir'] = '/usr/local'
 * zeromq['install_method'] = 'source'
-* zeromq['sha256_sum'] = 'df96a141c85b65c2cb6c0db22223126623a09eecbfccb7f74400f3f938742f59'
-* zeromq['src_url'] = 'http://download.zeromq.org'
-* zeromq['version'] = '3.2.5'
+* zeromq['src_url'] = 'https://github.com/zeromq/zeromq4-1.git'
+* zeromq['version'] = 'v4.1.4'
 * zeromq['creates'] = 'lib/libzmq.so'
 
-Note: If you want to install a different version than 3.2.5, just
-set the node attribute to the version you want.
+Note: If you want to install a different version than v4.1.4, just
+change the `src_url` and `version` attributes.
 
 If the `source` installation method is being used, the recipe uses the `creates` attribute
 to be idempotent. If a newer version of zeromq does not create `lib/libzmq.so`
