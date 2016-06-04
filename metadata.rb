@@ -11,7 +11,7 @@ recipe 'zeromq', 'Installs zeromq based on the default installation method'
 recipe 'zeromq::install_from_package', 'Installs zeromq from packages'
 recipe 'zeromq::install_from_source', 'Installs zeromq from source'
 
-%w(apt yum build-essential).each do |cookbook|
+%w(apt git yum build-essential).each do |cookbook|
   depends cookbook
 end
 
