@@ -21,7 +21,7 @@ end
 
 execute 'libsodium compile and install' do
   environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
-  command "./configure --prefix=#{node['zeromq']['dir']} && make && make install"
+  command "./autogen.sh && ./configure --prefix=#{node['zeromq']['dir']} && make && make install"
   cwd libsodium_src_dir
   creates File.join(node['zeromq']['dir'], 'lib', 'libsodium.so')
 end

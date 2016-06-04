@@ -54,7 +54,7 @@ git zeromq_src_dir do
 end
 
 execute 'zeromq compile and install' do
-  environment({'PATH' => '/usr/local/bin:/usr/bin:/bin'})
+  environment({'PATH' => '/usr/local/bin:/usr/bin:/bin', 'PKG_CONFIG_PATH' => "#{node['zeromq']['dir']}/lib/pkgconfig"})
   command "./autogen.sh && ./configure --prefix=#{node['zeromq']['dir']} && make && make install"
   cwd zeromq_src_dir
   creates File.join(node['zeromq']['dir'], 'lib', node['zeromq']['creates'])
