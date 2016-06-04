@@ -1,3 +1,9 @@
+## v1.1.0
+
+* Breaking changes: The `source` installation method now uses git to download
+  the sources from github.com instead of downloading release tarballs from
+  download.zeromq.org
+
 ## v1.0.6
 
 * Fix using release candidates in zeromq source install method
