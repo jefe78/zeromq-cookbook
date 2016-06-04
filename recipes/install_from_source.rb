@@ -21,16 +21,17 @@ include_recipe 'build-essential'
 include_recipe 'git::default'
 
 package 'libtool'
-package 'pkg-config'
 
 case node['platform_family']
 when 'rhel', 'fedora'
   package 'openssl-devel'
+  package 'pkgconfig'
   if node['zeromq']['version'] =~ /^2\..*/
     package 'libuuid-devel'
   end
 when 'debian', 'ubuntu'
   package 'libssl-dev'
+  package 'pkg-config'
   if node['zeromq']['version'] =~ /^2\..*/
     package 'uuid-dev'
   end
