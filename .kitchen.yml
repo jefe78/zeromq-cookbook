@@ -35,34 +35,20 @@ platforms:
     box: opscode-centos-6.5
     box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5_chef-provisionerless.box
 suites:
-- name: source_v2
+- name: source_v41
   run_list:
     - recipe[zeromq]
   attributes:
     zeromq:
-      version: 2.2.0
-      sha256_sum: 43904aeb9ea6844f72ca02e4e53bf1d481a1a0264e64979da761464e88604637
-- name: source_v3
-  run_list:
-  - recipe[zeromq]
-  attributes:
-    zeromq:
-      version: 3.2.5
-      sha256_sum: 09653e56a466683edb2f87ee025c4de55b8740df69481b9d7da98748f0c92124
-- name: source_v4
+      version: v4.1.4
+      src_url: https://github.com/zeromq/zeromq4-1.git
+- name: source_v40
   run_list:
     - recipe[zeromq]
   attributes:
     zeromq:
-      version: 4.0.5
-      sha256_sum: 3bc93c5f67370341428364ce007d448f4bb58a0eaabd0a60697d8086bc43342b
-- name: source_v41rc1
-  run_list:
-    - recipe[zeromq]
-  attributes:
-    zeromq:
-      version: 4.1.0-rc1
-      sha256_sum: e8e6325abe2ede0a9fb3d1abbe425d8a7911f6ac283652ee49b36afbb0164d60
+      version: v4.0.7
+      src_url: https://github.com/zeromq/zeromq4-x.git
 - name: source_custom_dir
   run_list:
   - recipe[zeromq]
