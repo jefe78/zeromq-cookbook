@@ -1,6 +1,7 @@
 ---
 driver_plugin: docker
 driver_config:
+  use_sudo: false
   require_chef_omnibus: true
   customize:
     memory: 256
