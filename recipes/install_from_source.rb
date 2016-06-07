@@ -30,7 +30,7 @@ when 'rhel', 'fedora'
     package 'libuuid-devel'
   end
 when 'debian', 'ubuntu'
-  package 'libtool-bin' if node['platform_family'] == 'debian'
+  package 'libtool-bin' if node['platform'] == 'debian'
   package 'libssl-dev'
   package 'pkg-config'
   if node['zeromq']['version'] =~ /^2\..*/
