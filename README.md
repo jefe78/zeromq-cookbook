@@ -8,10 +8,9 @@ Installs zeromq.
 ## Platform
 
 * Tested on
-  * Debian 7.2.0
-  * Ubuntu 10.04
-  * Ubuntu 12.04
-  * CentOS 6.5
+  * Debian 8.4
+  * Ubuntu 14.04
+  * CentOS 7.2
 
 ## Cookbooks
 
