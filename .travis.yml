@@ -3,8 +3,6 @@ sudo: required
 services:
   - docker
 language: ruby
-gemfile:
-- test/support/Gemfile
 rvm:
 - 2.1.5
 script:
