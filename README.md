@@ -1,26 +1,28 @@
-# <a name="title"></a> zeromq-cookbook [![Build Status](https://api.travis-ci.org/plu/zeromq-cookbook.png)](https://travis-ci.org/plu/zeromq-cookbook)
-# DESCRIPTION
+# zeromq-cookbook [![Build Status](https://api.travis-ci.org/plu/zeromq-cookbook.png)](https://travis-ci.org/plu/zeromq-cookbook)
+
+## DESCRIPTION
 
 Installs zeromq.
 
-# REQUIREMENTS
+## REQUIREMENTS
 
-## Platform
+### Platform
 
 * Tested on
   * Debian 8.4
   * Ubuntu 14.04
   * CentOS 7.2
 
-## Cookbooks
+### Cookbooks
 
 * apt
 * build-essential
+* git
 * yum
 
-# ATTRIBUTES
+## ATTRIBUTES
 
-See (attributes/default.rb)[attributes/default.rb] for defaults.
+See [attributes/default.rb](attributes/default.rb) for defaults.
 
 Note: If you want to install a different version than v4.1.4, just
 change the `src_url` and `version` attributes.
@@ -29,15 +31,17 @@ If the `source` installation method is being used, the recipe uses the `creates`
 to be idempotent. If a newer version of zeromq does not create `lib/libzmq.so`
 anymore, you can change this attribute.
 
-# USAGE
+## USAGE
 
 Include the zeromq recipe to install zeromq on your system based on the default installation method:
 
+```ruby
 include_recipe 'zeromq'
+```
 
 Currently the only installation method that is supported is: source
 
-# LICENSE/AUTHOR
+## LICENSE/AUTHOR
 
 Author:: Johannes Plunien (plu@pqpq.de)
 
