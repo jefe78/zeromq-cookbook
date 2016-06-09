@@ -1,5 +1,9 @@
 # zeromq-cookbook [![Build Status](https://api.travis-ci.org/plu/zeromq-cookbook.png)](https://travis-ci.org/plu/zeromq-cookbook)
 
+## MAINTAINER WANTED
+
+I'm looking for a new maintainer for this cookbook. If you're interested, just drop me a message at plu@pqpq.de and I'll be happy to transfer this project on github.com and supermarket.chef.io.
+
 ## DESCRIPTION
 
 Installs zeromq.
