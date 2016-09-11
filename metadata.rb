@@ -1,13 +1,13 @@
-maintainer       'Johannes Plunien'
-maintainer_email 'plu@pqpq.de'
+maintainer       'Jeffrey Taylor'
+maintainer_email 'jtaylor@hotheadgames.com'
 license          'Apache 2.0'
 description      'Installs/Configures zeromq'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '1.1.0'
 name             'zeromq'
 provides         'zeromq'
-issues_url       'https://github.com/plu/zeromq-cookbook/issues'
-source_url       'https://github.com/plu/zeromq-cookbook'
+issues_url       'https://github.com/jefe78/zeromq-cookbook/issues'
+source_url       'https://github.com/jefe78/zeromq-cookbook'
 
 recipe 'zeromq', 'Installs zeromq based on the default installation method'
 recipe 'zeromq::install_from_package', 'Installs zeromq from packages'

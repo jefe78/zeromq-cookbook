@@ -1,8 +1,4 @@
-# zeromq-cookbook [![Build Status](https://api.travis-ci.org/plu/zeromq-cookbook.png)](https://travis-ci.org/plu/zeromq-cookbook)
-
-## MAINTAINER WANTED
-
-I'm looking for a new maintainer for this cookbook. If you're interested, just drop me a message at plu@pqpq.de and I'll be happy to transfer this project on github.com and supermarket.chef.io.
+# zeromq-cookbook [![Build Status](https://api.travis-ci.org/jefe78/zeromq-cookbook.png)](https://travis-ci.org/jefe78/zeromq-cookbook)
 
 ## DESCRIPTION
 
@@ -45,9 +41,7 @@ include_recipe 'zeromq'
 
 Currently the only installation method that is supported is: source
 
-## LICENSE/AUTHOR
-
-Author:: Johannes Plunien (plu@pqpq.de)
+## LICENSE
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
